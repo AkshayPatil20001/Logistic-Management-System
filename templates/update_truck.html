@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Update Truck | TruckFlow</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header class="navbar"><div class="logo"><h1>TruckFlow</h1></div><div><a href="{{ url_for('logout') }}" class="btn">Logout</a></div></header>
+
+  <div class="form-box card">
+    <h3>Update Truck</h3>
+
+    <form method="POST">
+      <label class="label">Truck Number</label>
+      <input class="input" name="truck_number" value="{{ truck['truck_number'] }}" required>
+      <label class="label">Truck Model</label>
+      <input class="input" name="truck_model" value="{{ truck['truck_model'] }}">
+      <label class="label">Driver Name</label>
+      <input class="input" name="driver_name" value="{{ truck['driver_name'] }}">
+      <label class="label">Status</label>
+      <select class="input" name="status">
+        <option value="Active" {% if truck['status']=='Active' %}selected{% endif %}>Active</option>
+        <option value="In Maintenance" {% if truck['status']=='In Maintenance' %}selected{% endif %}>In Maintenance</option>
+        <option value="Inactive" {% if truck['status']=='Inactive' %}selected{% endif %}>Inactive</option>
+      </select>
+
+      {% if owners is defined %}
+        <label class="label">Owner (admin only)</label>
+        <select class="input" name="owner_id" required>
+          {% for o in owners %}
+            <option value="{{ o['id'] }}" {% if o['id']==truck['owner_id'] %}selected{% endif %}>{{ o['username'] }} — {{ o['business_name'] }}</option>
+          {% endfor %}
+        </select>
+      {% endif %}
+
+      <button class="btn" type="submit">Save Changes</button>
+      <a href="{{ url_for('owner_dashboard') }}" class="ghost" style="display:inline-block;margin-left:8px;padding:10px 12px;border-radius:8px">Cancel</a>
+    </form>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

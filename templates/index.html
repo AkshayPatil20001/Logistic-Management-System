@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Truck Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<!-- Navbar -->
+<header class="navbar">
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+        <span>Truck Management System</span>
+    </div>
+    <nav>
+        <a href="{{ url_for('login') }}" class="btn">Login</a>
+        <a href="{{ url_for('signup') }}" class="btn">Sign Up</a>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero landing-hero">
+    <div class="hero-text">
+        <h1>Efficient Truck & Fleet Management</h1>
+        <p>Track trucks, manage drivers, and optimize your operations seamlessly with our platform.</p>
+        <a href="{{ url_for('signup') }}" class="btn hero-btn">Get Started</a>
+        <a href="#features" class="btn hero-btn-secondary">Learn More</a>
+    </div>
+    <div class="hero-image">
+        <img src="{{ url_for('static', filename='images/truck_hero.jpg') }}" alt="Truck Fleet">
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features" id="features">
+    <h2>Our Features</h2>
+    <div class="feature-cards">
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/feature1.png') }}" alt="Tracking">
+            <h3>Real-Time Tracking</h3>
+            <p>Monitor all your trucks in real-time from one dashboard.</p>
+        </div>
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/feature2.png') }}" alt="Fleet Management">
+            <h3>Fleet Management</h3>
+            <p>Manage drivers, truck details, and maintenance schedules efficiently.</p>
+        </div>
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/feature3.png') }}" alt="Analytics">
+            <h3>Analytics & Reports</h3>
+            <p>Get detailed insights to improve business decisions and operations.</p>
+        </div>
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/feature4.png') }}" alt="Secure">
+            <h3>Secure & Role-Based Access</h3>
+            <p>Assign roles and control access to data safely.</p>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about">
+    <h2>About Our Company</h2>
+    <div class="about-content">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Company Logo" class="about-logo">
+        <p>We provide advanced truck management software designed to streamline logistics and fleet operations. Trusted by hundreds of fleet owners, our solution ensures efficiency, transparency, and better decision-making.</p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2025 Your Company Name. All rights reserved.</p>
+    <div class="social-links">
+        <a href="#">LinkedIn</a> | <a href="#">Twitter</a> | <a href="#">Facebook</a>
+    </div>
+</footer>
+</body>
+</html>

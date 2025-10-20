@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up - Truck Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="auth-body">
+    <div class="auth-container">
+        <h2>Sign Up</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <form method="POST" action="{{ url_for('signup') }}" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email">
+            <input type="text" name="mobile" placeholder="Mobile">
+            <input type="text" name="business_name" placeholder="Company Name">
+            <input type="password" name="password" placeholder="Password" required>
+            <select name="role" required>
+                <option value="">Select Role</option>
+                <option value="owner">Business Owner</option>
+                <option value="developer">Developer</option>
+            </select>
+            <label>Profile Image</label>
+            <input type="file" name="profile_image" accept="image/*">
+            <label>Company Image</label>
+            <input type="file" name="company_image" accept="image/*">
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+    </div>
+</body>
+</html>

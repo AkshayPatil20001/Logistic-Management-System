@@ -1,0 +1,30 @@
+<!-- {% extends 'base.html' %}
+{% block content %}
+<h2>Welcome, {{ user }}</h2>
+<h4>Add Truck Details</h4>
+<form method="POST" class="row g-3">
+  <div class="col-md-3"><input name="truck_number" class="form-control" placeholder="Truck Number" required></div>
+  <div class="col-md-3"><input name="driver_name" class="form-control" placeholder="Driver Name" required></div>
+  <div class="col-md-3"><input name="route" class="form-control" placeholder="Route" required></div>
+  <div class="col-md-2"><input name="status" class="form-control" placeholder="Status" required></div>
+  <div class="col-md-1"><button class="btn btn-success">Add</button></div>
+</form>
+
+<hr>
+<h4>Truck Records</h4>
+<table class="table table-striped">
+  <thead><tr><th>ID</th><th>Truck No</th><th>Driver</th><th>Route</th><th>Status</th><th>Action</th></tr></thead>
+  <tbody>
+    {% for t in trucks %}
+    <tr>
+      <td>{{ t[0] }}</td>
+      <td>{{ t[1] }}</td>
+      <td>{{ t[2] }}</td>
+      <td>{{ t[3] }}</td>
+      <td>{{ t[4] }}</td>
+      <td><a href="{{ url_for('delete_truck', id=t[0]) }}" class="btn btn-danger btn-sm">Delete</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %} -->

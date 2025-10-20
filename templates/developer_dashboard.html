@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Developer Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header class="navbar">
+    <div class="row" style="align-items:center;gap:12px;">
+        <span class="user-name">{{ session.name }} (Developer)</span>
+    </div>
+    <div class="row">
+        <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+    </div>
+</header>
+
+<main class="dashboard-main">
+
+    <section class="user-list">
+        <h3>All Users</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Profile</th>
+                    <th>Company</th>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>Business Name</th>
+                    <th>Role</th>
+                    <th>Signup Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>
+                        {% if user.profile_image %}
+                        <img src="data:image/png;base64,{{ user.profile_image | b64encode }}" class="profile-img-small">
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if user.company_image %}
+                        <img src="data:image/png;base64,{{ user.company_image | b64encode }}" class="company-img-small">
+                        {% endif %}
+                    </td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.business_name }}</td>
+                    <td>{{ user.role }}</td>
+                    <td>{{ user.created_at }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <section class="truck-list">
+        <h3>All Trucks</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Truck Number</th>
+                    <th>Model</th>
+                    <th>Driver</th>
+                    <th>Status</th>
+                    <th>Owner</th>
+                    <th>Added On</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for truck in trucks %}
+                <tr>
+                    <td>{{ truck.id }}</td>
+                    <td>{{ truck.truck_number }}</td>
+                    <td>{{ truck.truck_model }}</td>
+                    <td>{{ truck.driver_name }}</td>
+                    <td>{{ truck.status }}</td>
+                    <td>{{ truck.owner_id }}</td>
+                    <td>{{ truck.created_at }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+</main>
+</body>
+</html>

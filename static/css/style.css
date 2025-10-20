@@ -1,0 +1,193 @@
+:root {
+    --primary:#1b1f38;
+    --accent:#ff9900;
+    --bg:#12141f;
+    --text:#fff;
+}
+
+body {
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.navbar {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 24px;
+    background-color: var(--primary);
+}
+
+.navbar .logo img {
+    height:40px;
+    margin-right:8px;
+}
+
+.navbar a.btn {
+    padding:6px 12px;
+    background-color: var(--accent);
+    color:#000;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:600;
+}
+
+.hero {
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    padding:40px 20px;
+}
+
+.hero-text h1 {
+    font-size:48px;
+    color: var(--accent);
+}
+
+.hero-btn {
+    margin-top:20px;
+}
+
+.auth-body {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.auth-container {
+    background-color: var(--primary);
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+    width:400px;
+}
+
+.auth-container h2 {
+    text-align:center;
+    margin-bottom:20px;
+    color: var(--accent);
+}
+
+.auth-container input, select {
+    width:100%;
+    margin:8px 0;
+    padding:10px;
+    border-radius:6px;
+    border:none;
+}
+
+.auth-container .btn {
+    width:100%;
+    padding:10px;
+    background-color: var(--accent);
+    border:none;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.flash.success { background:green; color:#fff; padding:8px; margin:6px 0; border-radius:6px;}
+.flash.error { background:red; color:#fff; padding:8px; margin:6px 0; border-radius:6px;}
+.flash.info { background:blue; color:#fff; padding:8px; margin:6px 0; border-radius:6px;}
+
+.profile-img { height:50px; width:50px; border-radius:50%; border:2px solid var(--accent);}
+.company-img { height:50px; border-radius:6px; border:1px solid rgba(255,255,255,0.2);}
+.user-name, .company-name { font-weight:600; color: var(--accent);}
+.dashboard-main { padding:20px;}
+.add-truck, .truck-list { background-color: var(--primary); padding:16px; border-radius:12px; margin-bottom:20px;}
+table { width:100%; border-collapse:collapse;}
+table th, table td { border:1px solid #555; padding:8px; text-align:center;}
+.btn-delete { background:red; color:#fff; padding:4px 8px; border:none; border-radius:4px;}
+
+
+.profile-img-small { height:40px; width:40px; border-radius:50%; border:1px solid var(--accent);}
+.company-img-small { height:40px; border-radius:4px; border:1px solid rgba(255,255,255,0.2);}
+.user-list, .truck-list { background-color: var(--primary); padding:16px; border-radius:12px; margin-bottom:20px;}
+
+.landing-hero {
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    padding:60px 20px;
+    background: linear-gradient(to right, #1b1f38, #12141f);
+}
+
+.landing-hero .hero-text h1 {
+    font-size:50px;
+    color: var(--accent);
+}
+
+.hero-btn-secondary {
+    background: transparent;
+    border:2px solid var(--accent);
+    color: var(--accent);
+    margin-left:10px;
+}
+
+.features {
+    padding:60px 20px;
+    background-color: var(--primary);
+    text-align:center;
+}
+
+.features h2 {
+    color: var(--accent);
+    margin-bottom:40px;
+    font-size:36px;
+}
+
+.feature-cards {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.feature-cards .card {
+    background-color: #222533;
+    padding:20px;
+    border-radius:12px;
+    width:250px;
+    text-align:center;
+    transition: transform 0.3s;
+}
+
+.feature-cards .card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-cards .card h3 {
+    color: var(--accent);
+    margin:10px 0;
+}
+
+.feature-cards .card p {
+    font-size:14px;
+    color:#ccc;
+}
+
+.about {
+    padding:60px 20px;
+    background-color: var(--bg);
+    text-align:center;
+}
+
+.about-logo {
+    height:80px;
+    margin-bottom:20px;
+}
+
+.footer {
+    background-color: var(--primary);
+    padding:20px;
+    text-align:center;
+    color: #aaa;
+}
+
+.footer .social-links a {
+    color: var(--accent);
+    margin:0 10px;
+    text-decoration:none;
+}
